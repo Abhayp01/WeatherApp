@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="sunny.png" type="image/x-icon">
+</head>
+
+<body>
+    <div>
+        <video autoplay muted loop src="MyLiveWallpapers-com-Nature.mp4" class="vid"></video>
+    </div>
+    <div class="tog">
+    <div class="inptcity">
+    <form action="/" method="post">
+        <h1>Weather App</h1>
+        <input type="text" name="city" placeholder="City Name">
+        <button onclick="myfunc()" id="btn" type="submit" name="submit"><img id="search" src="search-interface-symbol.png" alt=""></button>
+    </form>
+    </div>
+    <div class="weather-box grid-container">
+        <div class="text grid-item">
+            <h1>The temperature of <%= mycity %> : <%= temp %> <span>&#8451</span></h1>
+            <h3>The weather is currently <%=weatherDescription%>
+            </h3>
+        </div>
+        <div class="img grid-item">
+        <img id="todimg" src="<%= imgUrl %>">
+        </div>  
+    </div>
+    </div>
+    <div class="forcast">
+        <div class="day">
+            <div class="nameofday"><p><%= day1 %></p></div>
+            <div class="type"><img class="futimg" src="<%= imgUrl1 %>"></div>
+            <div class="temperature"><%= temp1 %><span>&#8451</span></div>
+        </div>
+        <div class="day">
+            <div class="nameofday"><p><%= day2 %></p></div>
+            <div class="type"><img class="futimg" src="<%= imgUrl2 %>"></div>
+            <div class="temperature"><%= temp2 %><span>&#8451</span></div>
+        </div>
+        <div class="day">
+            <div class="nameofday"><p><%= day3 %></p></div>
+            <div class="type"><img class="futimg" src="<%= imgUrl3 %>"></div>
+            <div class="temperature"><%= temp3 %><span>&#8451</span></div>
+        </div>
+        <div class="day">
+            <div class="nameofday"><p><%= day4 %></p></div>
+            <div class="type"><img class="futimg" src="<%= imgUrl4 %>"></div>
+            <div class="temperature"><%= temp4 %><span>&#8451</span></div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>

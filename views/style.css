@@ -1,0 +1,120 @@
+body{
+  /* display: flex; */
+  justify-content: center;
+  margin-top: 10%;
+}
+.tog{
+  margin-left: 100px;
+  display: flex;
+}
+.vid{
+
+  width: 100vw;
+height: 100vh;
+object-fit: cover;
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+bottom: 0;
+z-index: -1;
+}
+.inptcity{
+margin-top: 50px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 45px;
+  }
+  .grid-item {
+    background-color: rgba(93, 181, 248, 0.9);
+    border: 1px solid rgba(14, 115, 101, 0.24);
+    padding: 20px;
+    text-align: center;
+  }
+
+    button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 30px;
+  width: 30px;
+  outline: none;
+  background: #7c7c7c2b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+input {
+  border: none;
+  outline: none;
+  padding: 0.4em 1em;
+  border-radius: 24px;
+  background: #e7e5e52b;
+  color: rgb(0, 0, 0);
+  font-family: inherit;
+  font-size: 105%;
+  width: calc(100% - 100px);
+}
+
+::placeholder{
+  color: rgb(0, 0, 0);
+}
+#search{
+  height: 17px;
+}
+.forcast{
+    width: 498px;
+    background-color: rgba(14, 115, 101, 0.24);
+    display: flex;
+    justify-content: center;
+    padding: 9px;
+    margin-left: 35%;
+}
+
+.day{
+  border-radius: 10px;
+  padding: 16px;
+  height: 83px;
+  margin: 10px;
+  width: 74px;
+  background-color: #c9e2e5;
+  text-align: center;
+}
+
+.futimg{
+  height: 44px;
+}
+p{
+  margin: 0;
+  font-weight: bold;
+
+  
+}
+.temperature{
+  font-weight: bold;
+
+}
+#todimg{
+  margin-top: 17px;
+}
+
+@media only screen and (max-width: 700px) {
+  .tog{
+    display: block;
+    margin: auto;
+  }
+  .forcast{
+    margin: auto;
+    width: auto;
+  }
+  .day{
+    height: 80px;
+    width: 48px;
+  }
+  #todimg{
+    margin-top: 77%;
+  }
+}
