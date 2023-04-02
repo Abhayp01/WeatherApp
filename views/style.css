@@ -2,12 +2,13 @@ body{
   /* display: flex; */
   justify-content: center;
   margin-top: 10%;
+  background-image: url(rainy.jpg);
 }
 .tog{
   margin-left: 100px;
   display: flex;
 }
-.vid{
+/* .vid{
 
   width: 100vw;
 height: 100vh;
@@ -18,7 +19,7 @@ right: 0;
 top: 0;
 bottom: 0;
 z-index: -1;
-}
+} */
 .inptcity{
 margin-top: 50px;
 }
