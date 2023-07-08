@@ -2,7 +2,7 @@ body{
   /* display: flex; */
   justify-content: center;
   margin-top: 10%;
-  background-image: url(rainy.jpg);
+  background-image: url(sunny.jpg);
 }
 .tog{
   margin-left: 100px;

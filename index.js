@@ -31,9 +31,16 @@ var a=today.getDay();
 
 app.get("/", function (req, res) {
     const url = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=c69fde2bab13cfa24384be7da34bc2fc&units=metric";
-    https.get(url, function (require) {
-        require.on("data", function (data) {
-            weatherData = JSON.parse(data);
+    https.get(url, function (response) {
+        let data = '';
+      
+        response.on('data', function (chunk) {
+          data += chunk;
+        });
+      
+        response.on('end', function () {
+          try {
+            const weatherData = JSON.parse(data);
             temp = weatherData.list[0].main.temp;
             temp1 = weatherData.list[8].main.temp;
             temp2 = weatherData.list[16].main.temp;
@@ -71,31 +78,29 @@ app.get("/", function (req, res) {
                 imgUrl3: imgUrl3,
                 imgUrl4: imgUrl4
             });
-        })
-    })
+          } catch (error) {
+            console.error('Error parsing JSON data:', error);
+          }
+        });
+      }).on('error', function (error) {
+        console.error('Error fetching data:', error);
+      });
 });
 
 
 app.post("/", function (req, res) {
     city = req.body.city;
 
-
-    // const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=c69fde2bab13cfa24384be7da34bc2fc&units=metric";
-    // https.get(url, function (response) {
-    //     response.on("data", function (data) {
-    //         weatherData = JSON.parse(data);
-    //         temp = weatherData.main.temp;
-    //         weatherDescription = weatherData.weather[0].description;
-    //         icon = weatherData.weather[0].icon;
-            
-    //         imgUrl = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
-    //         res.redirect("/")
-
-    //     })
-    // })
+ 
     const url = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=c69fde2bab13cfa24384be7da34bc2fc&units=metric";
     https.get(url, function (response) {
-        response.on("data", function (data) {
+        let data = '';
+      
+        response.on('data', function (chunk) {
+          data += chunk;
+        });
+      
+        response.on("end", function () {
             weatherData = JSON.parse(data);
             temp = weatherData.list[0].main.temp;
             temp1 = weatherData.list[8].main.temp;
@@ -116,14 +121,11 @@ app.post("/", function (req, res) {
             imgUrl4 = "http://openweathermap.org/img/wn/" + icon4 + "@2x.png";
             
             
-            res.redirect("/")
+            res.redirect("/");
 
         })
     })
-
-
-
-
+    
 });
 
 
